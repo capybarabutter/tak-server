@@ -70,16 +70,18 @@ CA_PASS=${INPUT_CA_PASS:-$CA_PASS}
 
 read -p "Enter a group name to add user to (optional, press Enter to skip): " GROUP_NAME
 
+
+# This section is not currently working. Feature not yet inmplemented.
 # ─────────────────────────────────────────────
 # Profile selection
 # ─────────────────────────────────────────────
-echo ""
-echo "Select a user profile:"
-echo "  1) Basic User     — standard field operator, settings unlocked"
-echo "  2) Advanced User  — multiple stream support, coord/alt prefs, network settings visible"
-echo "  3) Admin          — admin cert flag, settings admin password set, full access"
-read -p "Enter profile number [1]: " PROFILE_NUM
-PROFILE_NUM=${PROFILE_NUM:-1}
+# echo ""
+# echo "Select a user profile:"
+# echo "  1) Basic User     — standard field operator, settings unlocked"
+# echo "  2) Advanced User  — multiple stream support, coord/alt prefs, network settings visible"
+# echo "  3) Admin          — admin cert flag, settings admin password set, full access"
+# read -p "Enter profile number [1]: " PROFILE_NUM
+PROFILE_NUM=2 #${PROFILE_NUM:-1}
 
 case "$PROFILE_NUM" in
   1) PROFILE="basic" ;;
@@ -91,14 +93,14 @@ case "$PROFILE_NUM" in
     ;;
 esac
 
-echo "Profile selected: $PROFILE"
+# echo "Profile selected: $PROFILE"
 
-# Admin profile: prompt for settings lock PIN
-ADMIN_PIN=""
-if [ "$PROFILE" = "admin" ]; then
-  read -s -p "Enter an admin PIN to lock ATAK settings (leave blank to skip PIN lock): " ADMIN_PIN
-  echo ""
-fi
+# # Admin profile: prompt for settings lock PIN
+# ADMIN_PIN=""
+# if [ "$PROFILE" = "admin" ]; then
+#   read -s -p "Enter an admin PIN to lock ATAK settings (leave blank to skip PIN lock): " ADMIN_PIN
+#   echo ""
+# fi
 
 # ─────────────────────────────────────────────
 # Step 1: Generate client cert inside container
