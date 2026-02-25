@@ -1,4 +1,4 @@
-# TAK Server User Management Guide
+# TAK Server User Management Guide v.1.1
 
 > **Two-part guide:** Jump to [Quick Reference](#quick-reference) if you just need to remember the commands. Read [Full Guide](#full-guide) if it's been a while or you need to understand what's happening under the hood.
 
@@ -150,6 +150,8 @@ The ZIP is created from a temporary directory (`./temp_user_create/`) and placed
 If ZIP password protection was selected (`y` at the prompt), the ZIP is encrypted with the same password as the `.p12`. **Note:** Not all ATAK versions support password-protected ZIPs in Import Manager. When in doubt, skip ZIP protection — the `.p12` itself is always password-protected regardless.
 
 ### Profiles
+
+**This section not working in current version and is disabled**
 
 | Profile | What Changes |
 |---|---|
